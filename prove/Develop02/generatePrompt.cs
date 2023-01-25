@@ -1,5 +1,5 @@
 using System;
-
+using System.Collections.Generic;
 public class generatePrompts
 {
     public string _generatePrompt;
