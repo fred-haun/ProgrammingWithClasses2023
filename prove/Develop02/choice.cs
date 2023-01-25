@@ -25,6 +25,7 @@ public class choices
             {
                 prompt.display();
                 write.entry();
+                Console.WriteLine(write.entries[0]);
             }
             else if (_choice == "2")
             {

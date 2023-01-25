@@ -10,8 +10,7 @@ public class writing
     {
         Console.Write("> ");
         _entry = Console.ReadLine();
-        entries.Add(_entry);
-
+        entries.Add($"{_entry}");
     }
     public void saved()
     {
