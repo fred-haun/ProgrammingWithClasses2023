@@ -4,13 +4,12 @@ public class writing
 {
     DateTime date = DateTime.Today;
     public string _entry;
-
     public List<string> entries = new List<string>();
     public void entry()
     {
         Console.Write("> ");
         _entry = Console.ReadLine();
-        entries.Add($"{_entry}");
+        entries.Add(_entry);
     }
     public void saved()
     {

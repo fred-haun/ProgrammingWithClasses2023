@@ -4,6 +4,8 @@ public class choices
 {
     public string _choice;
     public bool endloop;
+    writing write =  new writing();
+
     public void entry()
     {
 
@@ -20,7 +22,6 @@ public class choices
             Console.Write("What would you like to do? ");
             _choice =  Console.ReadLine();
             generatePrompts prompt = new generatePrompts();
-            writing write = new writing();
             if (_choice == "1")
             {
                 prompt.display();
