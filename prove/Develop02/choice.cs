@@ -4,8 +4,8 @@ public class choices
 {
     public string _choice;
     public bool endloop;
-    writing write =  new writing();
-
+    writing write = new writing();
+    Loading loading = new Loading();
     public void entry()
     {
 
@@ -13,6 +13,7 @@ public class choices
         while (endloop == false)
         {
             endloop = false;
+            Console.WriteLine("");
             Console.WriteLine("Please select one of the following choices: ");
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Display");
@@ -21,27 +22,37 @@ public class choices
             Console.WriteLine("5. Quit");
             Console.Write("What would you like to do? ");
             _choice =  Console.ReadLine();
-            generatePrompts prompt = new generatePrompts();
-            if (_choice == "1")
+            if (_choice == "1" && loading.isloaded == false)
             {
-                prompt.display();
                 write.entry();
-                Console.WriteLine(write.entries[0]);
+            }
+            else if (_choice == "1" && loading.isloaded == true)
+            {
+                loading.entry();
             }
             else if (_choice == "2")
             {
-                write.saved();
-                Console.WriteLine(write.entries.Count);
+                if (loading.isloaded == false) 
+                {
+                    write.saved();
+                }
+                else if (loading.isloaded == true)
+                {
+                    loading.show();
+                }
             }
             else if (_choice == "3")
             {
-                Console.WriteLine("not ready yet");
-                endloop = true;
+                loading.load();
+                loading.isloaded = true;
             }
-            else if (_choice == "4")
+            else if (_choice == "4" && loading.isloaded == false)
             {
-                Console.WriteLine("not ready yet");
-                endloop = true;
+                write.create();
+            }
+            else if (_choice == "4" && loading.isloaded == true)
+            {
+                loading.show();
             }
             else if (_choice == "5")
             {
