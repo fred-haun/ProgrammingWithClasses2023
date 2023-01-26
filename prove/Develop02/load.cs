@@ -43,4 +43,11 @@ public class Loading
         append = Console.ReadLine();
         loadFile.Add("\nDate: " + date + " - Prompt: " + prompt._generatePrompt + "\n" + append);
     }
+    public void showFile()
+    {
+        for(int i=0; i<loadFile.Count;i++)
+        {
+            Console.WriteLine(loadFile[i]);  
+        }
+    }
 }

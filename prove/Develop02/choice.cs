@@ -38,7 +38,7 @@ public class choices
                 }
                 else if (loading.isloaded == true)
                 {
-                    loading.show();
+                    loading.showFile();
                 }
             }
             else if (_choice == "3")
