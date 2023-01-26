@@ -7,7 +7,7 @@ public class generatePrompts
     public void display()
     {
         Random rand = new Random();
-        int number = rand.Next(0, 5);
+        int number = rand.Next(0, 6);
         if (number == 1)
         {
             _generatePrompt = "Write your feelings.";
@@ -24,9 +24,13 @@ public class generatePrompts
         {
             _generatePrompt = "What is something you need to get off chest?";
         }
-        else
+        else if (number == 5)
         {
             _generatePrompt = "What can I do to make tommorrow a great day?";
+        }
+        else
+        {
+            _generatePrompt = "Tell a secret";
         }
 
         Console.WriteLine($"{_generatePrompt}");
