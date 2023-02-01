@@ -22,7 +22,7 @@ public class generatePrompts
         }
         else if (number == 4)
         {
-            _generatePrompt = "What is something you need to get off chest?";
+            _generatePrompt = "What is something you need to get off your chest?";
         }
         else if (number == 5)
         {
