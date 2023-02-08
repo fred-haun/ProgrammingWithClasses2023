@@ -43,7 +43,9 @@ public class getScripture
         while(wordsLeft > 0)
         {
             Random rand = new Random();
-            int number = rand.Next(0,(wordsLeft-1)); 
+            int number = rand.Next(0,(wordsLeft-1));
+            if (verseWords[number] == "______")
+            
             foreach(var word in verseWords)
             {
                 Console.Write($"{word} ");
@@ -57,5 +59,4 @@ public class getScripture
             choice.choices();
         }
     }
-
 }
