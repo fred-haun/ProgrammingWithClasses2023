@@ -5,7 +5,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        choice start = new choice();
-        start.choices();
+        getScripture start = new getScripture();
+        start.scripture();
+        start.deleteWords(start.choosenVerse);
     }
 }

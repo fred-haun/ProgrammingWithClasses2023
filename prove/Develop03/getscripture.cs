@@ -4,19 +4,20 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 public class getScripture
 {
-    private int number;
-    public void scripture()
+    public string choosenVerse;
+    choice choice = new choice();
+    public string scripture()
     {
         Random rand = new Random();
-        number = rand.Next(0, 31103);       
+        List<string> reference = new List<string>();
+        List<string> book = new List<string>();
+        List<string> bookNumber = new List<string>();
+        List<string> chapter = new List<string>();
+        List<string> verseNumber = new List<string>();
+        List<string> verse = new List<string>();
+        int number = rand.Next(0, 31103);       
         using(var reader = new StreamReader(@"C:\Users\fredr\Desktop\Winter 2023\Programming With Classes\ProgrammingWithClasses2023\prove\Develop03\kjv.csv"))
         {
-            List<string> reference = new List<string>();
-            List<string> book = new List<string>();
-            List<string> bookNumber = new List<string>();
-            List<string> chapter = new List<string>();
-            List<string> verseNumber = new List<string>();
-            List<string> verse = new List<string>();
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
@@ -29,15 +30,32 @@ public class getScripture
                 verseNumber.Add(values[4]);
                 verse.Add(values[5]);
             }
-            string[] verseWord = verse[number].Split(' ');
-            foreach(var word in verseWord)
+            choosenVerse = verse[number];
+        }
+        Console.WriteLine("");
+        Console.WriteLine($"{book[number]} {chapter[number]}:{verseNumber[number]}"); 
+        return choosenVerse;
+     }
+    public void deleteWords(string choosenVerse)
+    {
+        List<string> verseWords = new List<string>(choosenVerse.Split(" "));
+        int wordsLeft = verseWords.Count();
+        while(wordsLeft > 0)
+        {
+            Random rand = new Random();
+            int number = rand.Next(0,(wordsLeft-1)); 
+            foreach(var word in verseWords)
             {
-                System.Console.Write($"{word} ");
+                Console.Write($"{word} ");
             }
+            verseWords[number] = "______";
+            //verseWords.RemoveAt(number);
+            
             Console.WriteLine("");
-            Console.WriteLine($"{book[number]} {chapter[number]}:{verseNumber[number]}\n");
-            int wordCount = verseWord.Count(); 
-            Console.WriteLine(wordCount);
+            wordsLeft -= 1;
+            Console.WriteLine(wordsLeft);
+            choice.choices();
         }
     }
+
 }
