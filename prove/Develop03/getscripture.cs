@@ -16,7 +16,8 @@ public class getScripture
         List<string> verseNumber = new List<string>();
         List<string> verse = new List<string>();
         int number = rand.Next(0, 31103);       
-        using(var reader = new StreamReader(@"C:\Users\fredr\Desktop\Winter 2023\Programming With Classes\ProgrammingWithClasses2023\prove\Develop03\kjv.csv"))
+        using(var reader = new StreamReader(@"C:\BYUI_Winter_2023\Programming With Classes\ProgrammingWithClasses2023\prove\Develop03\kjv.csv"))
+        //C:\Users\fredr\Desktop\Winter 2023\Programming With Classes\ProgrammingWithClasses2023\prove\Develop03\kjv.csv
         {
             while (!reader.EndOfStream)
             {
@@ -39,23 +40,21 @@ public class getScripture
     public void deleteWords(string choosenVerse)
     {
         List<string> verseWords = new List<string>(choosenVerse.Split(" "));
+        List<int> used = new List<int>();
         int wordsLeft = verseWords.Count();
         while(wordsLeft > 0)
         {
             Random rand = new Random();
-            int number = rand.Next(0,(wordsLeft-1));
-            if (verseWords[number] == "______")
-            
+            int number = rand.Next(0, verseWords.Count); 
             foreach(var word in verseWords)
             {
                 Console.Write($"{word} ");
             }
             verseWords[number] = "______";
-            //verseWords.RemoveAt(number);
-            
+            //verseWords.RemoveAt(number);    
             Console.WriteLine("");
             wordsLeft -= 1;
-            Console.WriteLine(wordsLeft);
+            //Console.WriteLine(wordsLeft);
             choice.choices();
         }
     }
