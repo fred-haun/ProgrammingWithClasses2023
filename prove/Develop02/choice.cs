@@ -61,7 +61,7 @@ public class choices
             }
             else
             {
-                Console.WriteLine("Not a choice yo.");
+                Console.WriteLine("Not a choice. Please Try again.");
             }
         }
     }

@@ -14,7 +14,7 @@ public class Loading
     public void load()
     {
         
-        Console.WriteLine("What is the filename?");
+        Console.WriteLine("What is the filename? ");
         loadFileName = Console.ReadLine();
         
         string[] lines = File.ReadAllLines(loadFileName);  

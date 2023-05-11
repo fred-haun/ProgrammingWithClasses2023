@@ -14,7 +14,7 @@ public class writing
         prompt.display();
         Console.Write("> ");
         _entry = Console.ReadLine();
-        entries.Add("\nDate: " + todayDate + " - Prompt: " + prompt._generatePrompt + "\n" + _entry);
+        entries.Add("\nDate: " + todayDate  + " - Prompt: " + prompt._generatePrompt + "\n" + _entry);
     }
     public void saved()
     {

@@ -26,7 +26,7 @@ public class generatePrompts
         }
         else if (number == 5)
         {
-            _generatePrompt = "What can I do to make tommorrow a great day?";
+            _generatePrompt = "What can I do to make tommorrow a fun day?";
         }
         else
         {
