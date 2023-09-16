@@ -56,5 +56,5 @@ else if (percentNumber >= 70 && percentNumber < 90)
 }
 else
 {
-    Console.WriteLine($"You have earned an {letterGrade}{plusMinus}. LUL!! Try again.");
+    Console.WriteLine($"You have earned an {letterGrade}{plusMinus}. Try again.");
 }

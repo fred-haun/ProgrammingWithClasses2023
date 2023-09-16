@@ -34,6 +34,5 @@ class Program
         int favoriteNumber = PromptUserNumber();
         int squareNum = SquareNumber(favoriteNumber);
         DisplayResult(name, squareNum);
-        //Console.WriteLine("Hello Prep5 World!");
     }
 }

@@ -35,6 +35,5 @@ class Program
         Console.WriteLine($"The sum is: {sum}");
         Console.WriteLine($"The average is: {sum/totalNum}");
         Console.WriteLine($"The largest number is: {biggestNum}");
-        //Console.WriteLine("Hello Prep4 World!");
     }
 }
