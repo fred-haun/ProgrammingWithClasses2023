@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-public class writing
+public class Writing
 {
     DateTime todayDate = DateTime.Now;
     public string _entry;

@@ -8,7 +8,7 @@ public class Loading
     public bool isloaded = false;
     public string append;
     DateTime date = DateTime.Now;
-    writing write = new writing();
+    Writing write = new Writing();
     generatePrompts prompt = new generatePrompts();
     public List<string> loadFile = new List<string>();
     public void load()

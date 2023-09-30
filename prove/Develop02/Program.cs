@@ -7,5 +7,4 @@ class Program
         choices choice = new choices();
         choice.entry();
     }
-    
 }
