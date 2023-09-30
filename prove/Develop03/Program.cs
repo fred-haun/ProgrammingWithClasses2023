@@ -9,4 +9,5 @@ class Program
         start.scripture();
         start.deleteWords(start.choosenVerse);
     }
+    
 }

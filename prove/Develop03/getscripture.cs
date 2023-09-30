@@ -16,7 +16,7 @@ public class getScripture
         List<string> verseNumber = new List<string>();
         List<string> verse = new List<string>();
         int number = rand.Next(0, 31103);       
-        using(var reader = new StreamReader(@"C:\BYUI_Winter_2023\Programming With Classes\ProgrammingWithClasses2023\prove\Develop03\kjv.csv"))
+        using(var reader = new StreamReader(@"kjv.csv"))
         //C:\Users\fredr\Desktop\Winter 2023\Programming With Classes\ProgrammingWithClasses2023\prove\Develop03\kjv.csv
         {
             while (!reader.EndOfStream)
@@ -41,8 +41,9 @@ public class getScripture
     {
         List<string> verseWords = new List<string>(choosenVerse.Split(" "));
         List<int> used = new List<int>();
-        int wordsLeft = verseWords.Count();
-        while(wordsLeft > 0)
+        int wordsLeft = verseWords.Count() + 1;
+
+        while(wordsLeft > 1)
         {
             Random rand = new Random();
             int number = rand.Next(0, verseWords.Count); 
@@ -50,12 +51,49 @@ public class getScripture
             {
                 Console.Write($"{word} ");
             }
+            bool wordsCheck = false;
+            while (wordsCheck == false)
+            {
+                if (verseWords[number] == "______")
+                {
+                    if (number == verseWords.Count())
+                    {
+                        number = 0; 
+                        if (verseWords[number] == "______")
+                        {
+                            wordsCheck = false;
+                        }
+                        else 
+                        {
+                            wordsCheck = true;
+                        }
+                    }
+                    else 
+                    {
+                        number =rand.Next(0, verseWords.Count);
+                        if (verseWords[number] == "______") 
+                        { 
+                            wordsCheck = false;
+                        }
+                        else 
+                        {
+                            wordsCheck = true;
+                        }
+                    }
+                }
+                else
+                {
+                    wordsCheck = true;
+                }
+            }    
             verseWords[number] = "______";
-            //verseWords.RemoveAt(number);    
+                //verseWords.RemoveAt(number);    
             Console.WriteLine("");
             wordsLeft -= 1;
+
             //Console.WriteLine(wordsLeft);
             choice.choices();
         }
+        Console.WriteLine("Thanks for Playing!");
     }
 }
