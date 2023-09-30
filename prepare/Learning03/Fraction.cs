@@ -4,7 +4,6 @@ public class Fraction
 {
     private int _top;
     private int _bottom;
-
     public Fraction()
     {
         // Default to 1/1
