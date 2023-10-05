@@ -4,7 +4,7 @@ public class choices
 {
     public string _choice;
     public bool endloop;
-    writing write = new writing();
+    Writing write = new Writing();
     Loading loading = new Loading();
     public void entry()
     {
