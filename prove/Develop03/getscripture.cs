@@ -47,6 +47,7 @@ public class getScripture
         {
             Random rand = new Random();
             int number = rand.Next(0, verseWords.Count); 
+            //Console.Clear();
             foreach(var word in verseWords)
             {
                 Console.Write($"{word} ");
